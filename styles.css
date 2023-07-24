@@ -1,0 +1,85 @@
+:root {
+    --primary: #324e4e;
+    --primary-dark: #2a4242;
+    --primary-light: #32373a;
+    --grey: #729191;
+    --dark: #171717;
+    --line: #646464;
+    --light: #729191;
+    --white: #729191;
+    --header-height: 60px;
+    --content-width: 1280px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--grey);
+    background-color: var(--dark);
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+#about,
+#projects {
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.project {
+    border: 1px solid var(--line);
+    padding: 1rem;
+    background-color: var(--primary-light);
+}
+
+.project img {
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.project h3 {
+    margin: 0;
+    color: var(--white);
+}
+
+.project p {
+    margin: 0 0 1rem;
+    color: var(--grey);
+}
+
+.project a {
+    display: inline-block;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}

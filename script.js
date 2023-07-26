@@ -2,20 +2,20 @@
 const projectsData = [{
         title: 'Project 1',
         description: 'This is a sample project description 1.',
-        imageSrc: 'project1.jpg',
-        link: 'https://example.com/project1'
+        imageSrc: 'home.JPG',
+        link: 'https://calebojukwu.vercel.app/'
     },
     {
         title: 'Project 2',
         description: 'This is a sample project description 2.',
-        imageSrc: 'project2.jpg',
+        imageSrc: 'editor.jpg',
         link: 'https://example.com/project2'
     },
     // Add more projects here
     {
         title: 'Project 3',
         description: 'This is a sample project description 2.',
-        imageSrc: 'project2.jpg',
+        imageSrc: 'dictionary.jpg',
         link: 'https://example.com/project2'
     }, {
         title: 'Project 4',
@@ -39,8 +39,11 @@ function createProjectElement(project) {
     const projectElement = document.createElement('div');
     projectElement.classList.add('project');
 
+    // Construct the complete image URL using the image folder path and the imageSrc value
+    const imageFolderPath = 'img/';
     const projectImage = document.createElement('img');
-    projectImage.src = project.imageSrc;
+    projectImage.src = imageFolderPath + project.imageSrc;
+    projectImage.alt = project.title; // Set the alt attribute for accessibility
     projectElement.appendChild(projectImage);
 
     const projectTitle = document.createElement('h3');
@@ -61,6 +64,45 @@ function createProjectElement(project) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.querySelector('.project-grid');
+
+    // Scroll animation for header
+    const header = document.querySelector('header');
+    const projectsSection = document.getElementById('projects');
+    let scrolled = false;
+
+    function updateHeader() {
+        if (window.scrollY >= 50) {
+            if (!scrolled) {
+                header.classList.add('scrolled');
+                scrolled = true;
+            }
+        } else {
+            if (scrolled) {
+                header.classList.remove('scrolled');
+                scrolled = false;
+            }
+        }
+    }
+
+    // Show projects section when it comes into view
+    function showProjectsSection() {
+        const sectionTop = projectsSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 150) {
+            projectsSection.classList.add('show');
+            window.removeEventListener('scroll', showProjectsSection);
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        updateHeader();
+        showProjectsSection();
+    });
+
+    updateHeader();
+    showProjectsSection();
+
 
     projectsData.forEach(project => {
         const projectElement = createProjectElement(project);

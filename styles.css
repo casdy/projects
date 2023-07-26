@@ -1,12 +1,17 @@
 :root {
-    --primary: #324e4e;
-    --primary-dark: #2a4242;
-    --primary-light: #32373a;
-    --grey: #729191;
-    --dark: #171717;
-    --line: #646464;
-    --light: #729191;
-    --white: #729191;
+    /* Material UI Color Palette */
+    --primary: #729191;
+    --primary-dark: #729191;
+    --primary-light: #63A4FF;
+    --secondary: #5f7070;
+    --secondary-dark: #729191;
+    --secondary-light: #FF8A50;
+    --background: #F5F5F5;
+    --surface: #d3d6d6;
+    --on-primary: #FFFFFF;
+    --on-secondary: #FFFFFF;
+    --on-background: #000000;
+    --on-surface: #000000;
     --header-height: 60px;
     --content-width: 1280px;
 }
@@ -14,72 +19,199 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
     padding: 0;
-    color: var(--grey);
-    background-color: var(--dark);
+    padding-top: var(--header-height);
+    /* Add padding-top to push the main content below the fixed header */
+    color: var(--on-surface);
+    margin: 0;
+    background-color: var(--background);
 }
 
 header {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--on-primary);
     text-align: center;
+    margin-top: -60px;
     padding: 1rem;
+    transition: transform 0.3s ease-out;
 }
 
-nav h1 {
+header.hidden {
+    transform: translateY(-10%);
+    /* Move the header above the viewport to hide it */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
     margin: 0;
+}
+
+.hamburger-menu {
+    display: none;
+    /* Hide the hamburger menu by default for larger screens */
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--on-primary);
+    margin: 6px 0;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-right: 1rem;
+}
+
+.navbar-links a {
+    color: var(--on-primary);
+    text-decoration: none;
 }
 
 main {
     padding: 2rem;
+    box-sizing: border-box;
+    /* Include padding in the height calculation */
 }
 
-#about,
+#about {
+    padding: 5rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    margin: 1rem auto;
+    max-width: var(--content-width);
+    /* Add rounded border to create a bubble effect */
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
+    /* Add a subtle box shadow for depth */
+}
+
+#about-me {
+    margin: 1rem auto;
+    max-width: var(--content-width);
+    padding: 2rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+}
+
+#about p {
+    line-height: 1.8;
+}
+
 #projects {
+    margin: 1rem auto;
+    /* Adds space above and below, and centers the sections horizontally */
+    max-width: var(--content-width);
     margin-bottom: 2rem;
+    padding: 5rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    /* Add rounded border to create a bubble effect */
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
+    /* Add a subtle box shadow for depth */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#projects.show {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
+    padding: 1rem;
 }
 
 .project {
-    border: 1px solid var(--line);
+    border: 1px solid var(--on-background);
     padding: 1rem;
-    background-color: var(--primary-light);
+    background-color: var(--surface);
 }
 
 .project img {
-    max-width: 100%;
+    width: 250px;
+    /* Set the desired width */
+    height: 210px;
+    /* Set the desired height */
+    object-fit: cover;
+    /* Preserve aspect ratio and crop if necessary */
     display: block;
     margin-bottom: 1rem;
 }
 
 .project h3 {
     margin: 0;
-    color: var(--white);
+    color: var(--on-primary);
 }
 
 .project p {
     margin: 0 0 1rem;
-    color: var(--grey);
+    color: var(--on-surface);
 }
 
 .project a {
     display: inline-block;
-    background-color: var(--primary-dark);
-    color: var(--white);
+    background-color: var(--secondary);
+    color: var(--on-secondary);
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
 }
 
+
+/* Hover effect for buttons */
+
+.project a:hover {
+    background-color: var(--secondary-dark);
+}
+
+
+/* Click effect for buttons */
+
+.project a:active {
+    background-color: var(--secondary);
+    transform: translateY(1px);
+    /* Add a subtle click effect by moving the button down on click */
+}
+
+
+/* Scroll animation for the header */
+
+header {
+    transition: background-color 0.3s ease-out;
+}
+
+header.scrolled {
+    background-color: var(--primary-dark);
+}
+
+
+/* Scroll animation for projects section */
+
 footer {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--on-primary);
     text-align: center;
     padding: 1rem;
 }

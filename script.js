@@ -108,4 +108,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const projectElement = createProjectElement(project);
         projectsContainer.appendChild(projectElement);
     });
+
+    // JavaScript
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 50, // Adjust the offset based on your header height
+                    behavior: 'smooth',
+                });
+            }
+        });
+    });
+
+    // JavaScript (inside the DOMContentLoaded event)
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbarLinks = document.querySelectorAll('.navbar-links a');
+        const sections = document.querySelectorAll('section');
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        function highlightCurrentSection() {
+            let currentSectionIndex = 0;
+            sections.forEach((section, index) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < headerHeight) {
+                    currentSectionIndex = index;
+                }
+            });
+
+            navbarLinks.forEach((link, index) => {
+                link.classList.toggle('active', index === currentSectionIndex);
+            });
+        }
+
+        window.addEventListener('scroll', highlightCurrentSection);
+        highlightCurrentSection(); // Initial highlighting when the page loads
+    });
+
 });

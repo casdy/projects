@@ -6,14 +6,15 @@
     --secondary: #5f7070;
     --secondary-dark: #729191;
     --secondary-light: #FF8A50;
-    --background: #F5F5F5;
+    --background: #88a5a5;
     --surface: #d3d6d6;
+    --navhover: #010505;
     --on-primary: #FFFFFF;
     --on-secondary: #FFFFFF;
     --on-background: #000000;
     --on-surface: #000000;
     --header-height: 60px;
-    --content-width: 1280px;
+    --content-width: 900px;
 }
 
 body {
@@ -81,6 +82,46 @@ h1 {
     text-decoration: none;
 }
 
+.navbar-links a:hover {
+    border-bottom: 2px solid var(--navhover);
+}
+
+
+/* Add bubble effect to navbar links when clicked */
+
+.navbar-links a.active {
+    position: relative;
+}
+
+.navbar-links a.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background-color: var(--navhover);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+
+/* Animate the bubble effect */
+
+.navbar-links a.active::before {
+    animation: bubble 0.3s ease;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateX(-50%) scaleX(0);
+    }
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
 main {
     padding: 2rem;
     box-sizing: border-box;
@@ -138,15 +179,17 @@ main {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 2rem;
     padding: 1rem;
 }
 
 .project {
     border: 1px solid var(--on-background);
+    border-radius: 15px;
     padding: 1rem;
-    background-color: var(--surface);
+    background-color: var(--primary);
+    box-shadow: 0 60px 60px rgba(0, 0, 0, 0.4);
 }
 
 .project img {
@@ -158,6 +201,12 @@ main {
     /* Preserve aspect ratio and crop if necessary */
     display: block;
     margin-bottom: 1rem;
+}
+
+.project:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .project h3 {
@@ -215,3 +264,78 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+
+
+/* ... (Previous CSS code) ... */
+
+
+/* ... (Previous CSS code) ... */
+
+#skills {
+    padding: 5rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    margin: 1rem auto;
+    max-width: var(--content-width);
+    /* Add rounded border to create a bubble effect */
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
+    /* Add a subtle box shadow for depth */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#skills.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skills-grid a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.skills-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.skills-grid img:hover {
+    transform: scale(1.1);
+    /* Add a slight scale effect on hover */
+}
+
+
+/* ... (Previous CSS code) ... */
+
+#contact {
+    padding: 5rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    margin: 1rem auto;
+    max-width: var(--content-width);
+    /* Add rounded border to create a bubble effect */
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
+    /* Add a subtle box shadow for depth */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#contact.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ... (Previous CSS code) ... */

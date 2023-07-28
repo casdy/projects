@@ -1,6 +1,6 @@
 // Sample project data for demonstration
 const projectsData = [{
-        title: 'Project 1',
+        title: 'Portfolio',
         description: 'This is a sample project description 1.',
         imageSrc: 'home.JPG',
         link: 'https://calebojukwu.vercel.app/'
@@ -19,14 +19,14 @@ const projectsData = [{
         link: 'https://juuk-dictionary.vercel.app/'
     }, {
         title: 'Password Generator',
-        description: 'a password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external words.js file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
+        description: 'A password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external words.js file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
         imageSrc: 'pgenerator.jpg',
         link: 'https://password-generator-eng.vercel.app/'
     }, {
-        title: 'Project 5',
-        description: 'This is a sample project description 2.',
-        imageSrc: 'project2.jpg',
-        link: 'https://example.com/project2'
+        title: 'WedaForecast',
+        description: 'A simple weather app implemented using React and Axios to fetch weather data from the OpenWeatherMap API.',
+        imageSrc: 'weda.jpg',
+        link: 'https://wedaforecast.vercel.app/'
     }, {
         title: 'Project 6',
         description: 'This is a sample project description 2.',

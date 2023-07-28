@@ -1,13 +1,13 @@
 :root {
     /* Material UI Color Palette */
     --primary: #729191;
-    --primary-dark: #729191;
+    --primary-dark: #588080;
     --primary-light: #63A4FF;
     --secondary: #5f7070;
-    --secondary-dark: #729191;
+    --secondary-dark: #3f4747;
     --secondary-light: #FF8A50;
     --background: #88a5a5;
-    --surface: #d3d6d6;
+    --surface: #b7c9c9;
     --navhover: #010505;
     --on-primary: #FFFFFF;
     --on-secondary: #FFFFFF;
@@ -29,12 +29,19 @@ body {
 }
 
 header {
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: var(--on-primary);
     text-align: center;
-    margin-top: -60px;
+    margin-top: -10px;
     padding: 1rem;
     transition: transform 0.3s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: box-shadow 250ms linear;
+    background: var(--white);
 }
 
 header.hidden {
@@ -83,25 +90,26 @@ h1 {
 }
 
 .navbar-links a:hover {
-    border-bottom: 2px solid var(--navhover);
+    background-color: var(--primary-light);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 
 /* Add bubble effect to navbar links when clicked */
 
 .navbar-links a.active {
-    position: relative;
+    background-color: var(--navhover);
+    border-radius: 20px;
 }
 
 .navbar-links a.active::before {
-    content: '';
     position: absolute;
     bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     height: 4px;
-    background-color: var(--navhover);
     border-radius: 4px;
     z-index: -1;
 }
@@ -129,14 +137,18 @@ main {
 }
 
 #about {
-    padding: 5rem;
-    background-color: var(--surface);
-    border-radius: 20px;
-    margin: 1rem auto;
+    align-items: flex-start;
+    /* Align items at the top of the flex container */
     max-width: var(--content-width);
+    margin: 1rem auto;
     /* Add rounded border to create a bubble effect */
     box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
     /* Add a subtle box shadow for depth */
+    border-radius: 20px;
+    padding: 5rem;
+    background-color: var(--surface);
+    position: relative;
+    /* Set the parent as a positioning context */
 }
 
 #about-me {
@@ -150,6 +162,22 @@ main {
 
 #about h2 {
     margin-bottom: 1rem;
+}
+
+.about-image {
+    display: flex;
+    width: 120px;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0 40px 60px rgba(37, 36, 36, 0.1);
+    position: absolute;
+    /* Position the image absolutely */
+    top: 0;
+    /* Position the image at the top of the parent container */
+    right: 0;
+    /* Position the image at the right of the parent container */
+    transform: translate(-10%, 10%);
+    /* Adjust the position slightly */
 }
 
 #about p {
@@ -185,7 +213,7 @@ main {
 }
 
 .project {
-    border: 1px solid var(--on-background);
+    border: 1px var(--on-background);
     border-radius: 15px;
     padding: 1rem;
     background-color: var(--primary);
@@ -195,11 +223,14 @@ main {
 .project img {
     width: 250px;
     /* Set the desired width */
+    border-radius: 10px;
     height: 210px;
     /* Set the desired height */
     object-fit: cover;
     /* Preserve aspect ratio and crop if necessary */
     display: block;
+    margin: 0 auto;
+    /* Center the image horizontally */
     margin-bottom: 1rem;
 }
 
@@ -259,7 +290,7 @@ header.scrolled {
 /* Scroll animation for projects section */
 
 footer {
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: var(--on-primary);
     text-align: center;
     padding: 1rem;
@@ -335,6 +366,46 @@ footer {
 #contact.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* Add this CSS code to style the scroll-to-top button */
+
+#scrollToTopButton {
+    display: none;
+    /* Hide the button by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    /* Use the primary color from the color palette */
+    color: var(--on-primary);
+    /* Use the on-primary color from the color palette */
+    border: none;
+    outline: none;
+    border-radius: 40%;
+    width: 60px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrollToTopButton:hover {
+    background-color: var(--primary-dark);
+    /* Use the primary-dark color from the color palette */
+    transform: scale(1.1);
+    /* Add a slight scale effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#scrollToTopButton:active {
+    transform: scale(1);
+    /* Remove the scale effect when the button is clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 

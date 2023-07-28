@@ -6,22 +6,22 @@ const projectsData = [{
         link: 'https://calebojukwu.vercel.app/'
     },
     {
-        title: 'Project 2',
-        description: 'This is a sample project description 2.',
+        title: 'JUUK- Photo Editor',
+        description: 'An image editor application with multiple features. Users can apply various filters like saturation, blur, brightness, and contrast using sliders to modify image appearance in real-time. The app also allows rotating the image clockwise or counterclockwise by 90 degrees and flipping it horizontally or vertically. Users can load a new image for editing, and the app resets previous edits. After applying desired filters and transformations, users can save the edited image. The app generates a canvas, applies selected filters and transformations, and offers a download link for the edited image. It provides a user-friendly interface for in-browser image manipulation without server-side processing.',
         imageSrc: 'editor.jpg',
-        link: 'https://example.com/project2'
+        link: 'https://juuk-editor.vercel.app/'
     },
     // Add more projects here
     {
-        title: 'Project 3',
-        description: 'This is a sample project description 2.',
+        title: 'JUUK-Dictionary',
+        description: 'An interactive dictionary app that uses the free dictionary API to retrieve word meanings, phonetics, synonyms, and source URLs. The app allows users to search for words and displays relevant information on the interface. It features a search input field with a keyup event listener to trigger word searches, a loading message during API requests, and error messages if no meaning is found. Users can listen to word pronunciations by clicking the speak button. Additionally, the app provides a remove icon to clear the search input and reset the UI. Overall, the app offers a user-friendly vocabulary exploration experience.',
         imageSrc: 'dictionary.jpg',
-        link: 'https://example.com/project2'
+        link: 'https://juuk-dictionary.vercel.app/'
     }, {
-        title: 'Project 4',
-        description: 'This is a sample project description 2.',
-        imageSrc: 'project2.jpg',
-        link: 'https://example.com/project2'
+        title: 'Password Generator',
+        description: 'a password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external words.js file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
+        imageSrc: 'pgenerator.jpg',
+        link: 'https://password-generator-eng.vercel.app/'
     }, {
         title: 'Project 5',
         description: 'This is a sample project description 2.',
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showProjectsSection();
     });
 
+
     updateHeader();
     showProjectsSection();
 
@@ -146,5 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', highlightCurrentSection);
         highlightCurrentSection(); // Initial highlighting when the page loads
     });
+
 
 });

@@ -76,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsSection = document.getElementById('projects');
     let scrolled = false;
 
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+    // Toggle the active class on the navbar-links when the hamburger menu is clicked
+    hamburgerMenu.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active');
+    });
+
     function updateHeader() {
         if (window.scrollY >= 50) {
             if (!scrolled) {

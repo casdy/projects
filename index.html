@@ -14,10 +14,6 @@
         <nav>
             <h1>C.O</h1>
 
-            <div class="button-container">
-                <button id="downloadButton">Resume</button>
-            </div>
-
             <div class="hamburger-menu">
                 <span></span>
                 <span></span>
@@ -39,23 +35,23 @@
             <img src="img/me.jpg" alt="Your Name" class="about-image">
             <p>As a passionate and dedicated front-end developer with over two years of hands-on personal experience, I possess a strong foundation in web development and programming languages like JavaScript, HTML, and CSS. With a hunger for continuous
                 learning, I've honed my skills through personal projects, showcasing my adaptability and problem-solving abilities. My keen eye for detail and commitment to delivering high-quality code ensure that I thrive in collaborative environments.
-                Eager to make a meaningful impact, I am now seeking opportunities to leverage my expertise and grow alongside a dynamic team in the Tech industry.</p>
-
-            <p> This page is designed to showcase my portfolio. It features a Material UI design, utilizing a carefully chosen color palette to create a cohesive and modern look. The page is responsive, ensuring an optimal viewing experience across various
-                devices. Below, you'll find some of the projects I've worked on.</p>
+                Eager to make a meaningful impact, I am now seeking opportunities to leverage my expertise and grow alongside a dynamic team in the Tech industry. <br><br>Below, you'll find some of the projects I've worked on.</p>
         </section>
 
         <section id="skills">
-            <h2>These are some technologies I have worked with</h2>
+            <h2>Technologies I have worked with:</h2>
             <div class="skill-grid">
                 <!-- Projects will be dynamically added here using JavaScript -->
             </div>
         </section>
 
         <section id="projects">
-            <h2> These are some projects I have worked on</h2>
+            <h2> Projects:</h2>
             <div class="project-grid">
                 <!-- Projects will be dynamically added here using JavaScript -->
+            </div>
+            <div class="button-container">
+                <button id="downloadButton">Resume ⤓</button>
             </div>
         </section>
 
@@ -63,12 +59,32 @@
              Contact section content here 
         </section>-->
 
-        <a href="#" id="scrollToTopButton" class="scroll-to-top-button">&#8593;</a>
-        < <script>
-            // Function to scroll to the top of the page function scrollToTop() { // Scroll to the top of the page smoothly window.scrollTo({ top: 0, behavior: 'smooth' }); } document.addEventListener('DOMContentLoaded', () => { const scrollToTopButton = document.getElementById('scrollToTopButton');
-            // Show the scroll-to-top button when the user scrolls down window.addEventListener('scroll', () => { if (window.scrollY >= 300) { scrollToTopButton.style.display = 'block'; } else { scrollToTopButton.style.display = 'none'; } }); // Scroll
-            to top when the button is clicked scrollToTopButton.addEventListener('click', () => { scrollToTop(); }); });
-            </script>
+        <a href="#" id="scrollToTopButton" class="scroll-to-top-button">⇮</a>
+        <script>
+            // Function to scroll to the top of the page 
+            function scrollToTop() {
+                // Scroll to the top of the page smoothly 
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollToTopButton = document.getElementById('scrollToTopButton');
+            });
+            // Show the scroll-to-top button when the user scrolls down 
+            window.addEventListener('scroll', () => {
+                if (window.scrollY >= 300) {
+                    scrollToTopButton.style.display = 'block';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+            // Scrollto top when the button is clicked 
+            scrollToTopButton.addEventListener('click', () => {
+                scrollToTop();
+            });
+        </script>
     </main>
 
 

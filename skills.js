@@ -1,41 +1,41 @@
 // skill data
 const skillsData = [{
 
-        imageSrc: 'html.PNG',
+        imageSrc: 'html.jpg',
     },
     {
 
-        imageSrc: 'css.PNG',
+        imageSrc: 'css.jpg',
     },
     // Add more skills here
     {
 
-        imageSrc: 'js.PNG',
+        imageSrc: 'js.jpg',
 
     },
 
     {
 
-        imageSrc: 'react.PNG',
+        imageSrc: 'react.jpg',
 
     },
 
     {
 
-        imageSrc: 'python.PNG',
+        imageSrc: 'python.jpg',
 
     },
 
 
     {
 
-        imageSrc: 'git.PNG',
+        imageSrc: 'git.jpg',
 
     },
 
     {
 
-        imageSrc: 'vscode.JPG',
+        imageSrc: 'vscode.jpg',
 
     },
 ];

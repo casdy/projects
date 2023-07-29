@@ -2,7 +2,7 @@
 const projectsData = [{
         title: 'Portfolio Homepage',
         description: 'utilized Material- UI makestyle hook for styling and various other components to  create  an interactive and visually appealing homepage, allowing users to explore various features and interact with different sections of the webpage. Additionally, it renders a Today component outside the main root element, likely representing information relevant to the current day.',
-        imageSrc: 'home.JPG',
+        imageSrc: 'home.jpg',
         link: 'https://calebojukwu.vercel.app/'
     },
 

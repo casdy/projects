@@ -1,10 +1,18 @@
-// Sample project data for demonstration
+// project data
 const projectsData = [{
-        title: 'Portfolio',
-        description: 'This is a sample project description 1.',
+        title: 'Portfolio Homepage',
+        description: 'utilized Material- UI makestyle hook for styling and various other components to  create  an interactive and visually appealing homepage, allowing users to explore various features and interact with different sections of the webpage. Additionally, it renders a Today component outside the main root element, likely representing information relevant to the current day.',
         imageSrc: 'home.JPG',
         link: 'https://calebojukwu.vercel.app/'
     },
+
+    {
+        title: 'About-me/Projects/Skills/Resume',
+        description: 'This page is designed to showcase my portfolio. It features a Material UI design, utilizing a carefully chosen color palette to create a cohesive and modern look. The page is responsive, ensuring an optimal viewing experience across various devices.',
+        imageSrc: 'about.jpg',
+        link: 'https://portfolio-aboutme.vercel.app/'
+    },
+
     {
         title: 'JUUK- Photo Editor',
         description: 'An image editor application with multiple features. Users can apply various filters like saturation, blur, brightness, and contrast using sliders to modify image appearance in real-time. The app also allows rotating the image clockwise or counterclockwise by 90 degrees and flipping it horizontally or vertically. Users can load a new image for editing, and the app resets previous edits. After applying desired filters and transformations, users can save the edited image. The app generates a canvas, applies selected filters and transformations, and offers a download link for the edited image. It provides a user-friendly interface for in-browser image manipulation without server-side processing.',
@@ -27,12 +35,13 @@ const projectsData = [{
         description: 'A simple weather app implemented using React and Axios to fetch weather data from the OpenWeatherMap API.',
         imageSrc: 'weda.jpg',
         link: 'https://wedaforecast.vercel.app/'
-    }, {
-        title: 'Project 6',
-        description: 'This is a sample project description 2.',
-        imageSrc: 'project2.jpg',
-        link: 'https://example.com/project2'
     },
+
+    // {
+
+    //     imageSrc: 'weda.jpg',
+    //     link: 'https://docs.google.com/document/d/1hOzPr1SHzwx6C5hZiz3vRspsKIeybK_T/edit?usp=sharing&amp;ouid=112419973108300839496&amp;rtpof=true&amp;sd=true'
+    //},
 ];
 
 function createProjectElement(project) {
@@ -63,8 +72,10 @@ function createProjectElement(project) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const navbarLinks = document.querySelectorAll('.navbar-links a');
+    const sections = document.querySelectorAll('section');
+    const headerHeight = document.querySelector('header').offsetHeight;
     const projectsContainer = document.querySelector('.project-grid');
-
     // Scroll animation for header
     const header = document.querySelector('header');
     const projectsSection = document.getElementById('projects');
@@ -83,6 +94,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // Function to get the appropriate greeting based on the time of day
+    function getGreeting() {
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+
+        if (currentHour >= 5 && currentHour < 12) {
+            return 'Good morning';
+        } else if (currentHour >= 12 && currentHour < 18) {
+            return 'Good afternoon';
+        } else {
+            return 'Good evening';
+        }
+    }
+
+    // Function to create the heading element with the greeting
+    function createGreetingHeading() {
+        const greetingHeading = document.createElement('h2');
+        greetingHeading.textContent = getGreeting() + ', Welcome to My Portfolio!';
+        // Adjust the greeting message as needed
+
+        // Add the greeting heading to the about section (replace 'about' with the appropriate section ID)
+        const aboutSection = document.getElementById('about');
+        aboutSection.insertBefore(greetingHeading, aboutSection.firstChild);
+    }
+
+    // Call the createGreetingHeading function to add the greeting on page load
+    createGreetingHeading();
 
     // Show projects section when it comes into view
     function showProjectsSection() {
@@ -126,9 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // JavaScript (inside the DOMContentLoaded event)
     document.addEventListener('DOMContentLoaded', () => {
-        const navbarLinks = document.querySelectorAll('.navbar-links a');
-        const sections = document.querySelectorAll('section');
-        const headerHeight = document.querySelector('header').offsetHeight;
 
         function highlightCurrentSection() {
             let currentSectionIndex = 0;

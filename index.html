@@ -15,7 +15,12 @@
 <body>
     <header>
         <nav>
-            <h1>Caleb Ojukwu</h1>
+            <h1>C.O</h1>
+
+            <div class="button-container">
+                <button id="downloadButton">Download Resume</button>
+            </div>
+
             <div class="hamburger-menu">
                 <span></span>
                 <span></span>
@@ -24,7 +29,7 @@
             <ul class="navbar-links">
                 <li><a href="https://calebojukwu.vercel.app/">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About Me</a></li>
             </ul>
         </nav>
@@ -33,61 +38,50 @@
 
     <main>
         <section id="about">
-            <h2>About Me</h2>
+            <h2></h2>
             <img src="img/me.jpg" alt="Your Name" class="about-image">
-            <p>Welcome, this page was designed to showcase my portfolio. It features a Material UI design, utilizing a carefully chosen color palette to create a cohesive and modern look. The page is responsive, ensuring an optimal viewing experience across
-                various devices. I am a passionate developer with 7 years of experience in web development. Below, you'll find some of the projects I've worked on.</p>
+            <p>As a passionate and dedicated front-end developer with over two years of hands-on personal experience, I possess a strong foundation in web development and programming languages like JavaScript, HTML, and CSS. With a hunger for continuous
+                learning, I've honed my skills through personal projects, showcasing my adaptability and problem-solving abilities. My keen eye for detail and commitment to delivering high-quality code ensure that I thrive in collaborative environments.
+                Eager to make a meaningful impact, I am now seeking opportunities to leverage my expertise and grow alongside a dynamic team in the Tech industry.</p>
+
+            <p> This page is designed to showcase my portfolio. It features a Material UI design, utilizing a carefully chosen color palette to create a cohesive and modern look. The page is responsive, ensuring an optimal viewing experience across various
+                devices. Below, you'll find some of the projects I've worked on.</p>
+        </section>
+
+        <section id="skills">
+            <h2>These are some technologies I have worked with</h2>
+            <div class="skill-grid">
+                <!-- Projects will be dynamically added here using JavaScript -->
+            </div>
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
+            <h2> These are some projects I have worked on</h2>
             <div class="project-grid">
                 <!-- Projects will be dynamically added here using JavaScript -->
             </div>
         </section>
 
-        <section id="contact">
-            <!-- Contact section content here -->
-        </section>
-        <!-- Add this code inside the body section -->
+        <!-- <section id="contact">
+             Contact section content here 
+        </section>-->
+
         <a href="#" id="scrollToTopButton" class="scroll-to-top-button">&#8593;</a>
-        <!-- Add this script tag at the end of the body section or in the head section after the DOMContentLoaded event -->
-        <script>
-            // Function to scroll to the top of the page
-            function scrollToTop() {
-                // Scroll to the top of the page smoothly
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const scrollToTopButton = document.getElementById('scrollToTopButton');
-
-                // Show the scroll-to-top button when the user scrolls down
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY >= 300) {
-                        scrollToTopButton.style.display = 'block';
-                    } else {
-                        scrollToTopButton.style.display = 'none';
-                    }
-                });
-
-                // Scroll to top when the button is clicked
-                scrollToTopButton.addEventListener('click', () => {
-                    scrollToTop();
-                });
-            });
-        </script>
+        < <script>
+            // Function to scroll to the top of the page function scrollToTop() { // Scroll to the top of the page smoothly window.scrollTo({ top: 0, behavior: 'smooth' }); } document.addEventListener('DOMContentLoaded', () => { const scrollToTopButton = document.getElementById('scrollToTopButton');
+            // Show the scroll-to-top button when the user scrolls down window.addEventListener('scroll', () => { if (window.scrollY >= 300) { scrollToTopButton.style.display = 'block'; } else { scrollToTopButton.style.display = 'none'; } }); // Scroll
+            to top when the button is clicked scrollToTopButton.addEventListener('click', () => { scrollToTop(); }); });
+            </script>
     </main>
 
 
     <footer>
-        <p>Contact me at: example@email.com</p>
+        <p>Built with ❤️ using HTML, CSS an Javascript. ©️ 2023.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script src="skills.js"></script>
+
 </body>
 
 </html>

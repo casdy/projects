@@ -184,6 +184,109 @@ main {
     line-height: 1.8;
 }
 
+#skills {
+    margin: 1rem auto;
+    /* Adds space above and below, and centers the sections horizontally */
+    max-width: var(--content-width);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--surface);
+    border-radius: 20px;
+    /* Add rounded border to create a bubble effect */
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
+    /* Add a subtle box shadow for depth */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#skills.show {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.skill {
+    border: 1px var(--on-background);
+    width: 50px;
+    /* Set the desired width */
+    border-radius: 15px;
+    height: 50px;
+    padding: 2rem;
+    background-color: var(--primary);
+    box-shadow: 0 60px 60px rgba(0, 0, 0, 0.4);
+}
+
+.skill img {
+    width: 50px;
+    /* Set the desired width */
+    border-radius: 10px;
+    height: 50px;
+    /* Set the desired height */
+    object-fit: cover;
+    /* Preserve aspect ratio and crop if necessary */
+    display: block;
+    margin: 0 auto;
+    /* Center the image horizontally */
+    margin-bottom: 1rem;
+}
+
+.skill:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill h2 {
+    margin: 0;
+    color: var(--on-primary);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.skill h3 {
+    margin: 0;
+    color: var(--on-primary);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.skill p {
+    margin: 0 0 1rem;
+    color: var(--on-surface);
+    font-size: 12.5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.skill a {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--on-secondary);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+/* Hover effect for buttons */
+
+.skill a:hover {
+    background-color: var(--secondary-dark);
+}
+
+
+/* Click effect for buttons */
+
+.skill a:active {
+    background-color: var(--secondary);
+    transform: translateY(1px);
+    /* Add a subtle click effect by moving the button down on click */
+}
+
 #projects {
     margin: 1rem auto;
     /* Adds space above and below, and centers the sections horizontally */
@@ -209,13 +312,13 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
     gap: 2rem;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .project {
     border: 1px var(--on-background);
     border-radius: 15px;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: var(--primary);
     box-shadow: 0 60px 60px rgba(0, 0, 0, 0.4);
 }
@@ -223,8 +326,8 @@ main {
 .project img {
     width: 250px;
     /* Set the desired width */
-    border-radius: 10px;
-    height: 210px;
+    border-radius: 8px;
+    height: 130px;
     /* Set the desired height */
     object-fit: cover;
     /* Preserve aspect ratio and crop if necessary */
@@ -240,14 +343,23 @@ main {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.project h2 {
+    margin: 0;
+    color: var(--on-primary);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .project h3 {
     margin: 0;
     color: var(--on-primary);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .project p {
     margin: 0 0 1rem;
     color: var(--on-surface);
+    font-size: 12.5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .project a {
@@ -295,59 +407,6 @@ footer {
     text-align: center;
     padding: 1rem;
 }
-
-
-/* ... (Previous CSS code) ... */
-
-
-/* ... (Previous CSS code) ... */
-
-#skills {
-    padding: 5rem;
-    background-color: var(--surface);
-    border-radius: 20px;
-    margin: 1rem auto;
-    max-width: var(--content-width);
-    /* Add rounded border to create a bubble effect */
-    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.4);
-    /* Add a subtle box shadow for depth */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-#skills.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.skills-grid a {
-    display: block;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.skills-grid img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.skills-grid img:hover {
-    transform: scale(1.1);
-    /* Add a slight scale effect on hover */
-}
-
-
-/* ... (Previous CSS code) ... */
 
 #contact {
     padding: 5rem;
@@ -409,4 +468,48 @@ footer {
 }
 
 
-/* ... (Previous CSS code) ... */
+/* Add this CSS code to style the download button */
+
+
+/* Add this CSS code to style the button container */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Center the button horizontally */
+    margin-top: 10px;
+    margin-left: 220px;
+    /* Add some top margin */
+}
+
+
+/* Add this CSS code to style the download button */
+
+#downloadButton {
+    background-color: var(--primary);
+    /* Use the primary color from the color palette */
+    color: var(--on-primary);
+    /* Use the on-primary color from the color palette */
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#downloadButton:hover {
+    background-color: var(--primary-dark);
+    /* Use the primary-dark color from the color palette */
+    transform: scale(1.05);
+    /* Add a slight scale effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#downloadButton:active {
+    transform: scale(1);
+    /* Remove the scale effect when the button is clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

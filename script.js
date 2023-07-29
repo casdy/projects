@@ -37,11 +37,6 @@ const projectsData = [{
         link: 'https://wedaforecast.vercel.app/'
     },
 
-    // {
-
-    //     imageSrc: 'weda.jpg',
-    //     link: 'https://docs.google.com/document/d/1hOzPr1SHzwx6C5hZiz3vRspsKIeybK_T/edit?usp=sharing&amp;ouid=112419973108300839496&amp;rtpof=true&amp;sd=true'
-    //},
 ];
 
 function createProjectElement(project) {

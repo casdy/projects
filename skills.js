@@ -1,13 +1,14 @@
 // skill data
 const skillsData = [{
 
+        // Add more skills here
         imageSrc: 'html.jpg',
     },
     {
 
         imageSrc: 'css.jpg',
     },
-    // Add more skills here
+
     {
 
         imageSrc: 'js.jpg',
@@ -113,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to download the resume when the button is clicked
     function downloadResume() {
-        // Replace 'path/to/resume.pdf' with the actual path to your resume file
-        const resumeUrl = 'file/resume.pdf';
+        // Caleb Ojukwu_23.pdf'
+        const resumeUrl = 'file/Caleb Ojukwu_23pdf';
 
         // Create an anchor element to initiate the download
         const anchor = document.createElement('a');

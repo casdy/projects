@@ -115,14 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to download the resume when the button is clicked
     function downloadResume() {
         // Caleb Ojukwu_23.pdf'
-        const resumeUrl = 'file/Caleb_Ojukwu_23.pdf';
+        const resumeUrl = 'file/Caleb_Ojukwuu_resume.pdf';
 
         // Create an anchor element to initiate the download
         const anchor = document.createElement('a');
         anchor.href = resumeUrl;
 
         // Set the download attribute to specify the filename for the downloaded file
-        anchor.download = 'Caleb_Ojukwu_23.pdf';
+        anchor.download = 'Caleb_Ojukwuu_resume.pdf';
 
         // Append the anchor element to the body and trigger the download
         document.body.appendChild(anchor);

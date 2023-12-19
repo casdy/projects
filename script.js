@@ -26,12 +26,16 @@ const projectsData = [{
         description: 'An interactive dictionary app that uses the free dictionary API to retrieve word meanings, phonetics, synonyms, and source URLs. The app allows users to search for words and displays relevant information on the interface. It features a search input field with a keyup event listener to trigger word searches, a loading message during API requests, and error messages if no meaning is found. Users can listen to word pronunciations by clicking the speak button. Additionally, the app provides a remove icon to clear the search input and reset the UI. Overall, the app offers a user-friendly vocabulary exploration experience.',
         imageSrc: 'dictionary.jpg',
         link: 'https://juuk-dictionary.vercel.app/'
-    }, {
+    },
+
+    {
         title: 'Password Generator',
         description: 'A password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
         imageSrc: 'pgenerator.jpg',
         link: 'https://password-generator-eng.vercel.app/'
-    }, {
+    },
+
+    {
         title: 'WedaForecast',
         description: 'A simple weather app implemented using React and Axios to fetch weather data from the OpenWeatherMap API.',
         imageSrc: 'weda.jpg',

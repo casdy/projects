@@ -2,7 +2,7 @@
 const projectsData = [{
         // Add more projects here
         title: 'Portfolio Homepage',
-        description: 'utilized Material- UI makestyle hook for styling and various other components to  create  an interactive and visually appealing homepage, allowing users to explore various features and interact with different sections of the webpage. Additionally, it renders a Today component outside the main root element, likely representing information relevant to the current day.',
+        description: 'utilized Material- UI makestyle hook for styling and various other components to  create  an interactive and visually appealing homepage, allowing users to explore various features and interact with different sections of the webpage. Additionally, it renders a Today component outside the main root element, representing information about the current day.',
         imageSrc: 'home.jpg',
         link: 'https://calebojukwu.vercel.app/'
     },
@@ -16,7 +16,7 @@ const projectsData = [{
 
     {
         title: 'JUUK- Photo Editor',
-        description: 'An image editor application with multiple features. Users can apply various filters like saturation, blur, brightness, and contrast using sliders to modify image appearance in real-time. The app also allows rotating the image clockwise or counterclockwise by 90 degrees and flipping it horizontally or vertically. Users can load a new image for editing, and the app resets previous edits. After applying desired filters and transformations, users can save the edited image. The app generates a canvas, applies selected filters and transformations, and offers a download link for the edited image. It provides a user-friendly interface for in-browser image manipulation without server-side processing.',
+        description: 'An image editor web tool with multiple features. Users can apply various filters like saturation, blur, brightness, and contrast using sliders to modify image appearance in real-time. The app also allows rotating the image clockwise or counterclockwise by 90 degrees and flipping it horizontally or vertically. Users can load a new image for editing, and the app resets previous edits. After applying desired filters and transformations, users can save the edited image. The app generates a canvas, applies selected filters and transformations, and offers a download link for the edited image. It provides a user-friendly interface for in-browser image manipulation without server-side processing.',
         imageSrc: 'editor.jpg',
         link: 'https://juuk-editor.vercel.app/'
     },
@@ -28,7 +28,7 @@ const projectsData = [{
         link: 'https://juuk-dictionary.vercel.app/'
     }, {
         title: 'Password Generator',
-        description: 'A password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external words.js file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
+        description: 'A password generator that allows users to customize the password based on their preferences. The code takes into account the length and type of the password specified by the user. If the password type is "passphrase," the code asynchronously loads an external file using the Fetch API. It then generates a passphrase by randomly selecting words from the loaded words array and displays the passphrase in the password container. On the other hand, for other password types, the code generates a random password consisting of alphanumeric characters, with the option to include special characters if requested. Overall, the code aims to offer a flexible and secure way for users to generate and manage passwords for their needs.',
         imageSrc: 'pgenerator.jpg',
         link: 'https://password-generator-eng.vercel.app/'
     }, {

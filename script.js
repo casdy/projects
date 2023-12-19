@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (currentHour >= 5 && currentHour < 12) {
             return 'Good morning';
-        } else if (currentHour >= 12 && currentHour < 18) {
+        } else if (currentHour >= 12 && currentHour < 16) {
             return 'Good afternoon';
         } else {
             return 'Good evening';
